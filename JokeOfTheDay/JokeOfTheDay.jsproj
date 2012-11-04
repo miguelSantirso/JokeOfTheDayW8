@@ -47,7 +47,9 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>JokeOfTheDay_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>JokeOfTheDay_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>FFE876024E3EFC1C57CA51E25A41C60C34FEF351</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
@@ -63,17 +65,20 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="images\wide_tile.png" />
+    <Content Include="strings\es-ES\jokes.txt" />
+    <None Include="JokeOfTheDay_StoreKey.pfx" />
     <Content Include="js\default.js" />
+    <None Include="Package.StoreAssociation.xml" />
     <None Include="JokeOfTheDay_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="strings\es-ES\jokes.resjson" />
-    <PRIResource Include="strings\es-ES\resources.resjson" />
     <PRIResource Include="strings\en-US\jokes.resjson" />
     <PRIResource Include="strings\en-US\resources.resjson" />
+    <PRIResource Include="strings\es-ES\jokes.resjson" />
+    <PRIResource Include="strings\es-ES\resources.resjson" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
