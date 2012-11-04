@@ -52,13 +52,17 @@
   <ItemGroup>
     <Content Include="css\default.css" />
     <Content Include="default.html" />
+    <Content Include="images\badge.png" />
+    <Content Include="images\favicon.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
+    <Content Include="images\square_tile.png" />
     <Content Include="images\storelogo.png" />
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="images\wide_tile.png" />
     <Content Include="js\default.js" />
     <None Include="JokeOfTheDay_TemporaryKey.pfx" />
   </ItemGroup>
