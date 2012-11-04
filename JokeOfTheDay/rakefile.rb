@@ -23,7 +23,7 @@ private
 
 
 def plain_to_resjson(original, target)
-	original = File.new(original, "r")
+	original = File.new(original, "r:UTF-8")
 
 	
 	jsonJokes = {}

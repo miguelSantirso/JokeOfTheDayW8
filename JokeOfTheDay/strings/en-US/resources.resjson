@@ -3,5 +3,6 @@
 {
     "appTitle"              : "Joke Of The Day",
     "sharePaneTitle"        : "Like this joke?",
-    "sharePaneDescription"  : "Share this joke with your friends or family!"
+    "sharePaneDescription"  : "Share this joke with your friends or family!",
+    "share"                 : "Share"
 }

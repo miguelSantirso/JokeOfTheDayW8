@@ -70,6 +70,8 @@
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
   </ItemGroup>
   <ItemGroup>
+    <PRIResource Include="strings\es-ES\jokes.resjson" />
+    <PRIResource Include="strings\es-ES\resources.resjson" />
     <PRIResource Include="strings\en-US\jokes.resjson" />
     <PRIResource Include="strings\en-US\resources.resjson" />
   </ItemGroup>

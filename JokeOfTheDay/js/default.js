@@ -18,6 +18,7 @@
             }
             args.setPromise(WinJS.UI.processAll());
 
+            bindShareButton()
             setDate();
             setJokeOfDay();
             setLiveTile();
@@ -37,6 +38,11 @@
         WinJS.Resources.processAll();
     }
 
+
+    function bindShareButton() {
+        var shareButton = document.getElementById("share");
+        shareButton.addEventListener("click", function (event) { Windows.ApplicationModel.DataTransfer.DataTransferManager.showShareUI(); }, false);
+    }
 
     function setDate() {
         var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
