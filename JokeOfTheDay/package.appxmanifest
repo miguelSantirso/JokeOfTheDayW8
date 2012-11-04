@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="JokeOfTheDay" Logo="images\square_tile.png" SmallLogo="images\favicon.png" Description="JokeOfTheDay" ForegroundText="light" BackgroundColor="#f1046a">
+      <VisualElements DisplayName="Joke Of The Day" Logo="images\square_tile.png" SmallLogo="images\favicon.png" Description="Smile every day with a different joke :D" ForegroundText="light" BackgroundColor="#f1046a">
         <DefaultTile ShowName="allLogos" WideLogo="images\wide_tile.png" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#f1046a" />
         <InitialRotationPreference>
@@ -27,7 +27,4 @@
       </VisualElements>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>

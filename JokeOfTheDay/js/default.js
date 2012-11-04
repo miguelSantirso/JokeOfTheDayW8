@@ -20,6 +20,7 @@
 
             setDate();
             setJokeOfDay();
+            setLiveTile();
         }
     };
 
@@ -71,6 +72,32 @@
         request.data.properties.title = getString("sharePaneTitle");
         request.data.properties.description = getString("sharePaneDescription");
         request.data.setText(getTodaysJoke());
+    }
+
+
+    function setLiveTile() {
+        var notifications = Windows.UI.Notifications;
+
+        var template = notifications.TileTemplateType.tileWideText04;
+        var tileXml = notifications.TileUpdateManager.getTemplateContent(template);
+
+        var tileTextAttributes = tileXml.getElementsByTagName("text");
+        tileTextAttributes[0].appendChild(tileXml.createTextNode(getTodaysJoke()));
+
+        var squareTemplate = notifications.TileTemplateType.tileSquareText04;
+        var squareTileXml = notifications.TileUpdateManager.getTemplateContent(squareTemplate);
+        var squareTileTextAttributes = squareTileXml.getElementsByTagName("text");
+        squareTileTextAttributes[0].appendChild(squareTileXml.createTextNode(getTodaysJoke()));
+
+        var node = tileXml.importNode(squareTileXml.getElementsByTagName("binding").item(0), true);
+        tileXml.getElementsByTagName("visual").item(0).appendChild(node);
+
+        var tileNotification = new notifications.TileNotification(tileXml);
+
+        var currentTime = new Date();
+        tileNotification.expirationTime = new Date(currentTime.getTime() + 600 * 1000);
+
+        notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
     }
 
 
