@@ -1,0 +1,28 @@
+﻿
+#jokeBox {
+    margin: 4em;
+}
+
+#theJoke {
+    font-size: 3.5em;
+    margin: 3em 1em 0;
+}
+
+#share {
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 4em;
+    right: 6em;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

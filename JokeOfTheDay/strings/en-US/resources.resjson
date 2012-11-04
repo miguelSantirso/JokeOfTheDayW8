@@ -1,0 +1,8 @@
+﻿// For details on localizing a Windows app, see: http://go.microsoft.com/fwlink/?LinkId=212836
+
+{
+    "appTitle"              : "Joke Of The Day",
+    "sharePaneTitle"        : "Like this joke?",
+    "sharePaneDescription"  : "Share this joke with your friends or family!",
+    "share"                 : "Share"
+}
