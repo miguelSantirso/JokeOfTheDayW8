@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="20942pncil.DailyJoke" Version="1.0.0.0" Publisher="CN=86A87874-2817-495D-B0F1-C13599B00137" />
+  <Properties>
+    <DisplayName>Daily Joke</DisplayName>
+    <PublisherDisplayName>pncil</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Joke Of The Day" Logo="images\square_tile.png" SmallLogo="images\favicon.png" Description="Smile every day with a different joke :D" ForegroundText="light" BackgroundColor="#f1046a">
+        <DefaultTile ShowName="allLogos" WideLogo="images\wide_tile.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#f1046a" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>
