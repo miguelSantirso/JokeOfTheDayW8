@@ -115,7 +115,7 @@
         var tileNotification = new notifications.TileNotification(tileXml);
 
         var currentTime = new Date();
-        tileNotification.expirationTime = new Date(currentTime.getTime() + 600 * 1000);
+        tileNotification.expirationTime = new Date(currentTime.getTime() + 2 * 60 * 60 * 1000); // Expires two hours from now
 
         notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
     };

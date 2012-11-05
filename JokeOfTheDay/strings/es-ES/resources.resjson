@@ -1,6 +1,7 @@
 ﻿// For details on localizing a Windows app, see: http://go.microsoft.com/fwlink/?LinkId=212836
 
 {
+    "appName"               : "Chiste Del Día",
     "appTitle"              : "Chiste del Día",
     "sharePaneTitle"        : "¿Te gusta este chiste?",
     "sharePaneDescription"  : "¡Comparte el chiste con tus amigos o con tu familia!",
