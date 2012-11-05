@@ -26,7 +26,7 @@
     
     Windows.UI.WebUI.WebUIApplication.onresuming = function () {
         refreshUI();
-    }
+    };
 
     app.oncheckpoint = function (args) {
         // TODO: This application is about to be suspended. Save any state
@@ -39,19 +39,19 @@
 
     app.onloaded = function () {
         WinJS.Resources.processAll();
-    }
+    };
 
 
     function refreshUI() {
         setDate();
         setJokeOfDay();
         setLiveTile();
-    }
+    };
 
     function bindShareButton() {
         var shareButton = document.getElementById("share");
         shareButton.addEventListener("click", function (event) { Windows.ApplicationModel.DataTransfer.DataTransferManager.showShareUI(); }, false);
-    }
+    };
 
     function setDate() {
         var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
@@ -59,12 +59,12 @@
 
         var theDate = document.getElementById("date");
         theDate.textContent = formattedDate;
-    }
+    };
 
     function setJokeOfDay() {
         var theJoke = document.getElementById("theJoke");
         theJoke.textContent = getTodaysJoke();
-    }
+    };
 
 
     function getTodaysJoke() {
@@ -74,20 +74,20 @@
         var todaysJokeI18NKey = "/jokes/joke" + today % nJokes;
 
         return getString(todaysJokeI18NKey);
-    }
+    };
 
 
     function registerForShare() {
         var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
         dataTransferManager.addEventListener("datarequested", shareTextHandler);
-    }
+    };
 
     function shareTextHandler(e) {
         var request = e.request;
         request.data.properties.title = getString("sharePaneTitle");
         request.data.properties.description = getString("sharePaneDescription");
         request.data.setText(getTodaysJoke());
-    }
+    };
 
 
     function setLiveTile() {
@@ -113,12 +113,12 @@
         tileNotification.expirationTime = new Date(currentTime.getTime() + 600 * 1000);
 
         notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
-    }
+    };
 
 
     function getString(i18nKey) {
         return WinJS.Resources.getString(i18nKey).value;
-    }
+    };
 
 
     app.start();
