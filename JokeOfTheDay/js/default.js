@@ -11,19 +11,22 @@
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
-                registerForShare();
+                //
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
             }
             args.setPromise(WinJS.UI.processAll());
 
-            bindShareButton()
-            setDate();
-            setJokeOfDay();
-            setLiveTile();
+            registerForShare();
+            bindShareButton();
+            refreshUI();
         }
     };
+    
+    Windows.UI.WebUI.WebUIApplication.onresuming = function () {
+        refreshUI();
+    }
 
     app.oncheckpoint = function (args) {
         // TODO: This application is about to be suspended. Save any state
@@ -38,6 +41,12 @@
         WinJS.Resources.processAll();
     }
 
+
+    function refreshUI() {
+        setDate();
+        setJokeOfDay();
+        setLiveTile();
+    }
 
     function bindShareButton() {
         var shareButton = document.getElementById("share");
