@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="20942pncil.DailyJoke" Version="1.0.0.0" Publisher="CN=86A87874-2817-495D-B0F1-C13599B00137" />
+  <Identity Name="20942pncil.DailyJoke" Version="1.0.0.2" Publisher="CN=86A87874-2817-495D-B0F1-C13599B00137" />
   <Properties>
     <DisplayName>Daily Joke</DisplayName>
     <PublisherDisplayName>pncil</PublisherDisplayName>
