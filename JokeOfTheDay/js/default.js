@@ -11,18 +11,26 @@
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
-                registerForShare();
+                //
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
             }
             args.setPromise(WinJS.UI.processAll());
 
-            bindShareButton()
-            setDate();
-            setJokeOfDay();
-            setLiveTile();
+            registerForShare();
+            bindShareButton();
+            refreshUI();
         }
+    };
+    
+    Windows.UI.WebUI.WebUIApplication.onresuming = function () {
+        refreshUI();
+    };
+
+    app.onsettings = function (e) {
+        e.detail.applicationcommands = { "about": { title: "About", href: "/html/about.html" } };
+        WinJS.UI.SettingsFlyout.populateSettings(e);
     };
 
     app.oncheckpoint = function (args) {
@@ -36,13 +44,19 @@
 
     app.onloaded = function () {
         WinJS.Resources.processAll();
-    }
+    };
 
+
+    function refreshUI() {
+        setDate();
+        setJokeOfDay();
+        setLiveTile();
+    };
 
     function bindShareButton() {
         var shareButton = document.getElementById("share");
         shareButton.addEventListener("click", function (event) { Windows.ApplicationModel.DataTransfer.DataTransferManager.showShareUI(); }, false);
-    }
+    };
 
     function setDate() {
         var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
@@ -50,12 +64,12 @@
 
         var theDate = document.getElementById("date");
         theDate.textContent = formattedDate;
-    }
+    };
 
     function setJokeOfDay() {
         var theJoke = document.getElementById("theJoke");
         theJoke.textContent = getTodaysJoke();
-    }
+    };
 
 
     function getTodaysJoke() {
@@ -65,20 +79,20 @@
         var todaysJokeI18NKey = "/jokes/joke" + today % nJokes;
 
         return getString(todaysJokeI18NKey);
-    }
+    };
 
 
     function registerForShare() {
         var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
         dataTransferManager.addEventListener("datarequested", shareTextHandler);
-    }
+    };
 
     function shareTextHandler(e) {
         var request = e.request;
         request.data.properties.title = getString("sharePaneTitle");
         request.data.properties.description = getString("sharePaneDescription");
         request.data.setText(getTodaysJoke());
-    }
+    };
 
 
     function setLiveTile() {
@@ -101,15 +115,15 @@
         var tileNotification = new notifications.TileNotification(tileXml);
 
         var currentTime = new Date();
-        tileNotification.expirationTime = new Date(currentTime.getTime() + 600 * 1000);
+        tileNotification.expirationTime = new Date(currentTime.getTime() + 2 * 60 * 60 * 1000); // Expires two hours from now
 
         notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
-    }
+    };
 
 
     function getString(i18nKey) {
         return WinJS.Resources.getString(i18nKey).value;
-    }
+    };
 
 
     app.start();
