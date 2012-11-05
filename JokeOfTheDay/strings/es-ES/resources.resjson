@@ -4,5 +4,6 @@
     "appTitle"              : "Chiste del Día",
     "sharePaneTitle"        : "¿Te gusta este chiste?",
     "sharePaneDescription"  : "¡Comparte el chiste con tus amigos o con tu familia!",
-    "share"                 : "Compartir"
+    "share"                 : "Compartir",
+    "aboutTitle"            : "Sobre Esta App"
 }

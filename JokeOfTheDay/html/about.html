@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title data-win-res="{textContent: 'aboutTitle'}">About This App</title>
+    </head>
+    <body>
+         <div data-win-control="WinJS.UI.SettingsFlyout" aria-label="About This App page" data-win-options="{settingsCommandId:'about',width:'normal'}"> 
+            <div class="win-ui-dark win-header" style="background-color:#f1046a; position: relative;">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button> 
+                <div class="win-label" data-win-res="{textContent: 'aboutTitle'}">About This App</div> 
+                <img src="../images/badge.png" style="position: absolute; right: 0; bottom: 0;"/> 
+            </div> 
+            <div class="win-content"> 
+                <div class="win-settings-section"> 
+
+                    <p data-win-res="{textContent: 'simpleAppMadeBy'}">This is a simple app made by <a href="http://miguelsantirso.es/">Miguel Santirso</a>.</p>
+                    
+                    <h2 data-win-res="{textContent: 'anExperimentTitle'}">Just an experiment!</h2>
+
+                    <p data-win-res="{textContent: 'anExperimentDescription'}">I just wanted to test the new Windows 8 APIs and the Windows Store. However, I will happily improve it if enough people is interested so post your feedback in the comments!</p>
+                    
+                    <h2 data-win-res="{textContent: 'iconAttribution'}">Icon Attribution</h2>
+
+                    <p><a href="http://thenounproject.com/noun/person/#icon-No4895" target="_blank">Person</a> designed by <a href="http://thenounproject.com/CatherinePlease" target="_blank">Catherine Please</a> from The Noun Project</p>
+                </div> 
+            </div> 
+        </div> 
+    </body>
+</html>

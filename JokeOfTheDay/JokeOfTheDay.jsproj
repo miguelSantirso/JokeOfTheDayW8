@@ -54,6 +54,7 @@
   <ItemGroup>
     <Content Include="css\default.css" />
     <Content Include="default.html" />
+    <Content Include="html\about.html" />
     <Content Include="images\badge.png" />
     <Content Include="images\favicon.png" />
     <Content Include="images\logo.png" />
