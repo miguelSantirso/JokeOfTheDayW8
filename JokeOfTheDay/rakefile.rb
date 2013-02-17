@@ -16,6 +16,7 @@ lang_folders.each do |lang_folder|
 	end
 end
 
+desc "Rebuilds all jokes to .json"
 task :rebuild_jokes 
 
 

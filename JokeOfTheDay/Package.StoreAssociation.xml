@@ -356,15 +356,14 @@
       <ReservedName>Chiste Del Día</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
-  <AccountPackageIdentityNames />
+  <AccountPackageIdentityNames>
+    <MainPackageIdentityName>20942pncil.Juego</MainPackageIdentityName>
+    <MainPackageIdentityName>20942pncil.RacingWings</MainPackageIdentityName>
+  </AccountPackageIdentityNames>
   <PackageInfoList LandingUrl="https://appdev.microsoft.com:443/StorePortals/Developer/Catalog/ReleaseAnchor/8e90ffb5-2c15-439b-8aba-5836b35c0abe">
     <PackageInfo>
       <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.0.0.2</PackageMaxArchitectureVersion>
-    </PackageInfo>
-    <PackageInfo>
-      <PackageArchitecture />
-      <PackageMaxArchitectureVersion>0.0.0.0</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.0.0.5</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>
